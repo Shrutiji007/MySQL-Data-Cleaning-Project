@@ -134,6 +134,9 @@ SET `date` = STR_TO_DATE(`date`, '%m/%d/%Y');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN `date` DATE;
 
+
+-- 3. Removing Null Values or Blank Values
+
 SELECT * 
 FROM layoffs_staging2
 WHERE total_laid_off IS NULL
@@ -186,7 +189,7 @@ SELECT *
 FROM layoffs_staging2;
 
 
--- 4.Remove any columns 
+-- 4.Remove any unnecessary columns 
 
 ALTER TABLE layoffs_staging2
 DROP COLUMN row_num;
